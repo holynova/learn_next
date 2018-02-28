@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-import Box from '../components/Box.jsx'
+import Link from 'next/link';
+import Box from '../components/Box.jsx';
 const log = console.log.bind(console);
 
 class Table extends Component {
@@ -18,8 +18,13 @@ class Table extends Component {
   render() {
     return (
       <div>
-        <h1>Table</h1>
-        {/* <div>{JSON.stringify(this.props.matchData)}</div> */}
+        <h1>Index</h1>
+        <div className='nav'>
+          <Link href='/'> home</Link>
+          <Link href='/user_list?number=1'> get 1</Link>
+          <Link href='/user_list?number=3'> get 3</Link>
+          <Link href='/user_list?number=5'> get 5</Link>
+        </div>
         <Box list={this.props.data} ></Box>
       </div>
     )
